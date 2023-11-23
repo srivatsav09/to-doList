@@ -40,7 +40,16 @@ INSTALLED_APPS = [
     'todo',
     'api',
     'rest_framework',
+    'rest_framework.authtoken'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
+#uses a token authentication whenever we run the  .IsAuthenticated for example in api/views.py in the 26th line
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
